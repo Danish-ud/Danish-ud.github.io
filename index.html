@@ -82,7 +82,8 @@
             white-space: nowrap;
             margin: 0 auto;
             letter-spacing: .1em;
-            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+            /* Increased steps to accommodate the full name "Khaja Danishuddin" (20 characters + spaces) */
+            animation: typing 3.5s steps(20, end), blink-caret .75s step-end infinite;
         }
 
         @keyframes typing {
@@ -113,7 +114,7 @@
             </div>
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-slate-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <!-- Mobile Menu -->
@@ -127,10 +128,10 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center">
+        <section id="hero" class="flex items-center py-20 md:min-h-screen">
             <div class="container mx-auto px-6 text-center">
                 <div class="typewriter max-w-2xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Hi, I'm Khaja Danishuddin</h1>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Khaja Danishuddin</h1>
                 </div>
                 <p class="text-lg md:text-xl text-slate-400 font-light mb-10 max-w-3xl mx-auto">A Passionate Data Analyst dedicated to transforming complex data into actionable insights.</p>
                 <a href="#projects" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition-all shadow-lg glow-on-hover">Explore My Work</a>
@@ -142,15 +143,15 @@
             <div class="container mx-auto px-6 max-w-4xl glass-card rounded-lg p-10">
                 <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
                 <p class="text-lg text-slate-300 leading-relaxed text-center">
-                   Welcome to my Portfolio! I am a data analyst seeker with a good hands on experience in areas like data cleaning, visualizations, statistical analysis. My expertise lies in SQL, Power Bi, and Python Libraries.
+                    Welcome to my Portfolio! I am a data analyst seeker with a good hands on experience in areas like data cleaning, visualizations, statistical analysis. My expertise lies in SQL, Power Bi, and Python Libraries.
                 <p class="text-lg text-slate-300 leading-relaxed text-center">
-                   I am passionate about leveraging data to solvereal-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models, and communicate findings using interactive Dashboards clearly to diverse audiences.
+                    I am passionate about leveraging data to solvereal-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models, and communicate findings using interactive Dashboards clearly to diverse audiences.
                 
-                  </p>
+                     </p>
             </div>
         </section>
         
-         <section id="skills" class="py-28">
+           <section id="skills" class="py-28">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-16 text-white">Technical Skills</h2>
 
@@ -208,8 +209,7 @@
         </div>
     </section>
 </body>
-</html>
-
+</html>   
         <!-- Projects Section -->
         <section id="projects" class="py-28">
             <div class="container mx-auto px-6">
@@ -252,7 +252,7 @@
                             <li class="text-slate-400 mb-4">Encouraging customers with exciting offers or discounts or exclusive features for switching their package from month-month to one year or two year packages </li>
                             <li class="text-slate-400 mb-4">Customer churning under utilize their services like gb used or call allowances, So provide them personalized plans, lower-tier plans for low usage users</li>
                             <li class="text-slate-400 mb-4">Churn is more in senior citizens and married users. So, provide personalized family or couple plans to boost retention among users.</li>
-                            <li class="text-slate-400 mb-4">Churn is more on male customers. So, Conduct surveys with targetted male customers eto identify potential service gaps.</li>                            
+                            <li class="text-slate-400 mb-4">Churn is more on male customers. So, Conduct surveys with targetted male customers eto identify potential service gaps.</li>                                 
                             <div class="mb-4">
                                 <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">SQL</span>
                                 <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Python & Libraries</span>
@@ -274,11 +274,11 @@
                             <h2>Key Insights :</h2>
                             <li class="text-slate-400 mb-4">Strengthen High performing customers through loyalty programs especially for top buyers like "save-a-lot Markets" and "ErnstHandel"</li>
                             <li class="text-slate-400 mb-4">Implement Targetted Marketting in under performing countries like Ireland, Sweeden, Canada to grow customer base.</li>
-                            <li class="text-slate-400 mb-4">Recognizing top performing Employees to provide bonus on the performance that encourages underperforming employees to give their best.</li>                
+                            <li class="text-slate-400 mb-4">Recognizing top performing Employees to provide bonus on the performance that encourages underperforming employees to give their best.</li>                                 
                             <li class="text-slate-400 mb-4">Reviewing logistics performance of underutilized shippers. If feasibl, renogotiate contracts or streamline shipping options to favour the mostefficient carriers.</li>
                             <div class="mb-4">
                                 <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">SQL</span>
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Power Bi</span>                                
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Power Bi</span>                                 
                             </div>
                             <div class="flex justify-between items-center mt-6">
                                 <a href="northwind.pbix" class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
@@ -343,4 +343,3 @@
     </script>
 
 </body>
-</html>
