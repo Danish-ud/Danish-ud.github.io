@@ -1,188 +1,346 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khaja Danishuddin - Data Analyst Portfolio</title>
+    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Roboto Mono for a techy feel -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles for Inter font */
+        /* Use a futuristic font combination */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #020617; /* slate-950 */
+            color: #e2e8f0; /* slate-200 */
         }
-        /* Smooth scroll for navigation */
-        html {
-            scroll-behavior: smooth;
+        h1, h2, h3 {
+             font-family: 'Exo 2', sans-serif;
         }
+
+        /* Animated gradient background for the body */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 20%, rgba(29, 78, 216, 0.15), transparent 30%),
+                        radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.15), transparent 30%);
+            animation: move-glow 20s infinite alternate;
+        }
+
+        @keyframes move-glow {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(100px, 50px);
+            }
+        }
+
+        /* Glassmorphism effect for the header */
+        .glass-header {
+            background: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with opacity */
+        }
+
+        /* Glowing effect for buttons and links */
+        .glow-on-hover {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(56, 189, 248, 0), 0 0 10px rgba(56, 189, 248, 0);
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.6), 0 0 25px rgba(56, 189, 248, 0.4);
+            transform: scale(1.05);
+        }
+        
+        /* Glassmorphism for cards */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.5); /* slate-900 with opacity */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.7);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Typing effect for hero text */
+        .typewriter h1 {
+            overflow: hidden;
+            border-right: .15em solid #38bdf8; /* sky-400 */
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .1em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #38bdf8; }
+        }
+
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-slate-200">
 
-    <header class="bg-white shadow-md py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
-        <nav class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-700">Khaja Danishuddin</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#about" class="text-gray-600 hover:text-blue-700 transition duration-300">About</a></li>
-                <li><a href="#skills" class="text-gray-600 hover:text-blue-700 transition duration-300">Skills</a></li>
-                <li><a href="#projects" class="text-gray-600 hover:text-blue-700 transition duration-300">Projects</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-blue-700 transition duration-300">Contact</a></li>
-            </ul>
+    <!-- Header & Navigation -->
+    <header class="glass-header sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white tracking-wider">
+                <a href="#">KHAJA DANISHUDDIN</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-sky-400 font-medium transition-all">about</a>
+                <a href="#skills" class="text-slate-300 hover:text-sky-400 font-medium transition-all">skills</a>
+                <a href="#projects" class="text-slate-300 hover:text-sky-400 font-medium transition-all">projects</a>
+                <a href="#contact" class="text-slate-300 hover:text-sky-400 font-medium transition-all">contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">about</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">skils</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">projects</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">contact</a>
+        </div>
     </header>
 
-    <section class="relative py-20 px-6 md:px-12 text-center rounded-lg m-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517694711081-f92e5e408d66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="absolute inset-0 bg-blue-900 opacity-70 rounded-lg"></div>
-        <div class="container mx-auto relative z-10 text-white">
-            
-            <h2 class="text-4xl font-extrabold mb-4">Hi, I'm Khaja Danishuddin</h2>
-            <p class="text-xl mb-8">A passionate Data Analyst dedicated to transforming complex data into actionable insights.</p>
-            <a href="#projects" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300 shadow-lg">View My Projects</a>
-        </div>
-    </section>
-
-    <section id="about" class="py-16 px-6 md:px-12 container mx-auto bg-white shadow-lg rounded-lg my-8">
-        <h3 class="text-3xl font-bold text-blue-700 mb-8 text-center">About Me</h3>
-        <div class="max-w-3xl mx-auto text-lg leading-relaxed">
-            <p class="mb-4">
-                Welcome to my portfolio! I am a data analyst seeker with the a good hands on experience in areas like data cleaning, visualization, statistical analysis. My expertise lies in SQL, Power Bi, and Python libraries.
-            </p>
-            <p>
-                I am passionate about leveraging data to solve real-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models, and communicate findings using interactive Dashboards clearly to diverse audiences.
-            </p>
-            <p class="mt-4">
-            </p>
-        </div>
-    </section>
-
-    <section id="skills" class="py-16 px-6 md:px-12 container mx-auto bg-white shadow-lg rounded-lg my-8">
-        <h3 class="text-3xl font-bold text-blue-700 mb-8 text-center">My Skills</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <h4 class="text-xl font-semibold text-blue-800 mb-3">Programming & Databases</h4>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li>Python (Pandas, NumPy, Scikit-learn)</li>
-                    <li>SQL (PostgreSQL, MySQL, SQL Server)</li>
-                    <li>NoSQL (MongoDB - Basic)</li>
-                </ul>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <div class="typewriter max-w-2xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Hi, I'm Khaja Danishuddin</h1>
+                </div>
+                <p class="text-lg md:text-xl text-slate-400 font-light mb-10 max-w-3xl mx-auto">A Passionate Data Analyst dedicated to transforming complex data into actionable insights.</p>
+                <a href="#projects" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition-all shadow-lg glow-on-hover">Explore My Work</a>
             </div>
-            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <h4 class="text-xl font-semibold text-blue-800 mb-3">Data Visualization</h4>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li>Tableau</li>
-                    <li>Power BI</li>
-                    <li>Matplotlib & Seaborn</li>
-                </ul>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <h4 class="text-xl font-semibold text-blue-800 mb-3">Statistical Analysis & Tools</h4>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li>Descriptive & Inferential Statistics</li>
-                    <li>A/B Testing</li>
-                    <li>Regression Analysis</li>
-                    <li>Microsoft Excel (Advanced)</li>
-                    <li>Google Sheets</li>
-                </ul>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                <h4 class="text-xl font-semibold text-blue-800 mb-3">Other Skills</h4>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li>Data Cleaning & Preprocessing</li>
-                    <li>ETL Processes</li>
-                    <li>Storytelling with Data</li>
-                    <li>Presentation Skills</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="py-16 px-6 md:px-12 container mx-auto bg-white shadow-lg rounded-lg my-8">
-        <h3 class="text-3xl font-bold text-blue-700 mb-12 text-center">My Projects</h3>
+        <!-- About Me Section -->
+        <section id="about" class="py-28">
+            <div class="container mx-auto px-6 max-w-4xl glass-card rounded-lg p-10">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+                <p class="text-lg text-slate-300 leading-relaxed text-center">
+                   Welcome to my Portfolio! I am a data analyst seeker with a good hands on experience in areas like data cleaning, visualizations, statistical analysis. My expertise lies in SQL, Power Bi, and Python Libraries.
+                <p class="text-lg text-slate-300 leading-relaxed text-center">
+                   I am passionate about leveraging data to solvereal-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models, and communicate findings using interactive Dashboards clearly to diverse audiences.
+                
+                  </p>
+            </div>
+        </section>
+        
+         <section id="skills" class="py-28">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">Technical Skills</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 bg-blue-50 p-6 rounded-lg shadow-md">
-            <div class="order-2 md:order-1">
-                <h4 class="text-2xl font-semibold text-blue-800 mb-4">Project Title 1: Restaurant Rating Analysis</h4>
-                <p class="text-gray-700 mb-4">
-                    <strong>Description:</strong>The Primary goal of this project is to drive insights from multiple datasets related to restaurants. In this project I performed a detailed analysis of restaurant rating using python (pandas) for data cleaning and transformation, and power bi for data visulization. <p class="text-gray-700 mb-4">
-                    <strong>Technologies Used:</strong> Python (Pandas), Jupyter Notebook, and Power bi.
-                </p>
-                <p class="text-gray-700 mb-4">
-                    <strong>Key Insights:</strong> <li>Mexican cuisine is the most preferred cuisine among consumers, but is food rating is low -highliting a gap between a good taste and popularity</li>
-                    <li>A significant portion of customers are students and single, suggesting restaurants should tailore offering and ambience to attract youger people.</li>
-                    <li>Restaurants offereing Valet parking service could really enhance customer satisfction and rating.</li>
-                    <li>Most consumers prefer restaurants where you have a separate smoking area. So, this is a thing that really attracts young customers.</li>
-                </p>
-                <div class="flex space-x-4">
-                    <a href="https://github.com/Danish-ud/Restaurant-Rating-Analysis" class="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition duration-300 shadow-lg" target="_blank">View on GitHub</a>
-                    <a href="Restaurant rating.pbix" class="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300 shadow-lg" target="_blank">View Dashboard/Report</a>
+            <!-- Programming and Databases Section -->
+            <h3 class="text-3xl font-bold text-center mb-10 text-sky-300">Programming and Databases</h3>
+            <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-10 text-center mb-20">
+                <!-- Python (Pandas, NumPy, Scikit-learn) -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for Python -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">Python <br><span class="text-sm opacity-80">(Pandas, NumPy, Scikit-learn)</span></p>
+                </div>
+                <!-- SQL -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for SQL -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">SQL</p>
+                </div>
+                <!-- NoSQL -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for NoSQL (generic database icon) -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10m0 0l4-4m-4 4l4 4m0 0h16a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">NoSQL</p>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="restaurant.png" alt="Project 1 Image" class="rounded-lg shadow-lg w-full h-auto">
-            </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 bg-blue-50 p-6 rounded-lg shadow-md">
-            <div class="order-2 md:order-2">
-                <h4 class="text-2xl font-semibold text-blue-800 mb-4">Project Title 2: Gourmet Food Supplier Sales Analysis</h4>
-                <p class="text-gray-700 mb-4">
-                    <strong>Description:</strong> To conduct an end-to-end business analysis using SQL and BI tools, with the aim of uncovering data-driven insights in the following key areas like Sales performance trends across products, regions, and time
-
-Customer behavior patterns and segmentation
-
-Supplier performance and relationship insights
-
-Shipping efficiency and logistics optimization </p>
-                <p class="text-gray-700 mb-4">
-                    <strong>Technologies Used:</strong> Power BI, SQL Server(MySQL).
-                </p>
-                <p class="text-gray-700 mb-4">
-                    <strong>Key Insights:</strong> <li>The revenue generated by Beverages, Dairy are highest performing categories. Indicating inventory revaluation.<li>Targeted marketting campiagns and regional promotions in underperforming countries like sweeden, canada would help usto grow our customer base.</li><li>Provide bounus to high peroforming employees which will boost all employees to work harder and get best results for us.</li>
-                    </li>
-                </p>
-                <div class="flex space-x-4">
-                    <a href="https://github.com/Danish-ud/Gourmet-Food-Supplier-Sales-Analysis" class="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition duration-300 shadow-lg" target="_blank">View on GitHub</a>
-                    <a href="northwind.pbix" class="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300 shadow-lg" target="_blank">View Dashboard/Report</a>
+            <!-- Data Visualization Section -->
+            <h3 class="text-3xl font-bold text-center mb-10 text-sky-300">Data Visualization</h3>
+            <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+                <!-- Tableau -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for Tableau (chart/graph) -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">Tableau</p>
+                </div>
+                <!-- Power BI -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for Power BI (bars/chart) -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">Power BI</p>
+                </div>
+                <!-- Matplotlib -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for Matplotlib (pie chart) -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">Matplotlib</p>
+                </div>
+                <!-- Seaborn -->
+                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
+                    <!-- Icon for Seaborn (line chart) -->
+                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8L11 2m9 9v8m0 0H7m14 0l-9-9"></path></svg>
+                    <p class="font-semibold text-lg mt-2 text-white">Seaborn</p>
                 </div>
             </div>
-            <div class="order-1 md:order-1">
-                <img src="Port image.png" alt="Project 2 Image" class="rounded-lg shadow-lg w-full h-auto">
-            </div>
-        </div>
-
-
-    <section id="contact" class="py-16 px-6 md:px-12 container mx-auto bg-white shadow-lg rounded-lg my-8">
-        <h3 class="text-3xl font-bold text-blue-700 mb-8 text-center">Get in Touch</h3>
-        <div class="max-w-xl mx-auto text-center">
-            <p class="text-lg mb-6">
-                I'm always open to new opportunities and collaborations. Feel free to connect with me!
-            </p>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGMvdKJqBSKNdSzHlZLxsLRVrrZhkxgncfcFWsNnfJvlsTvDrcbCPcwRclsxnHzWmbthgKn" target ="_blank"class= "text-blue-700 hover:text-blue-900 transition duration-300 text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6m18 0l-8.29-5.53a2 2 0 00-2.22 0L3 12" />
-                    </svg>
-                    khajadanishuddin@gmail.com
-                </a>
-
-
-                <a href="https://github.com/Danish-ud?tab=repositories" target="_blank" class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.399 1.02.0 2.046.133 3.004.399 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.196-6.091 8.196-11.385 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    GitHub
-                </a>
-            </div>
-            <p class="text-sm text-gray-500">I look forward to hearing from you!</p>
         </div>
     </section>
+</body>
+</html>
 
-    <footer class="bg-gray-800 text-white py-6 px-6 md:px-12 text-center rounded-t-lg mt-8">
-        <div class="container mx-auto">
-            <p>&copy; 2025 Khaja Danishuddin. All rights reserved.</p>
+        <!-- Projects Section -->
+        <section id="projects" class="py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16 text-white">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    <!-- Project Card 1 -->
+                    <div class="glass-card rounded-lg overflow-hidden">
+                        <img src="Restaurant Rating.png" alt="Project 1 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-white">Project 1: Restaurant Rating Analysis</h3>
+                            <h2>Description :</h2><p class="text-slate-400 mb-4">The primary goal of this project is to drive insights from multiple datasets related to restaurants. In this project I performed a detailed analysis of restaurant rating using python(Pandas) for data cleaning and transformation, and power bi for data visualization.</p>
+                            <h2>Key Insights :</h2>
+                            <li class="text-slate-400 mb-4"> Mexican Cuisine is the most preferred cuisine among customers, but the food offered by the restaurants has a low rating. This highlights a gap between a good taste restaurant based on popularity</li>
+                            <li class="text-slate-400 mb-4"> A significant portion of customers are students and single, suggesting restaurant should tailor offerings and ambience to attract younger people.</li>
+                            <li class="text-slate-400 mb-4"> Restaurants offering valet parking could really enhance the customer satisfaction and rating.</li>
+                            <li class="text-slate-400 mb-4">Consumers prefer restaurants with separate smoking are. So, restaurants arranging a separate smoking area would enhance their ratings</li>
+                            <div class="mb-4">
+                                
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Python Libraries</span>
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Power Bi</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <a href="Restaurant rating.pbix" class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
+                                <a href="https://github.com/Danish-ud/Restaurant-Rating-Analysis" target="_blank" class="text-slate-400 hover:text-white">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Add more project cards here following the same structure -->
+                     <div class="glass-card rounded-lg overflow-hidden">
+                        <img src="Churn Analysis.png" alt="Project 2 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-white">Project 2: Telecom Customer Churn Analysis</h3>
+                            <h2>Description :</h2><p class="text-slate-400 mb-4">The primary goal of this project is to identify key factors that lead to customer churn. The goal is to give actionable insights on customer churn to reduce churn and built an interactive Dashboard to show findings.</p>
+                            <h2>Key Insights :</h2>
+                            <li class="text-slate-400 mb-4">Encouraging customers with exciting offers or discounts or exclusive features for switching their package from month-month to one year or two year packages </li>
+                            <li class="text-slate-400 mb-4">Customer churning under utilize their services like gb used or call allowances, So provide them personalized plans, lower-tier plans for low usage users</li>
+                            <li class="text-slate-400 mb-4">Churn is more in senior citizens and married users. So, provide personalized family or couple plans to boost retention among users.</li>
+                            <li class="text-slate-400 mb-4">Churn is more on male customers. So, Conduct surveys with targetted male customers eto identify potential service gaps.</li>                            
+                            <div class="mb-4">
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">SQL</span>
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Python & Libraries</span>
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Tableau</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <a href="Customer Churn Overview.twb" download class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
+                                <a href="https://github.com/Danish-ud/Customer-Churn-Overview" target ="_blank" class="text-slate-400 hover:text-white">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="glass-card rounded-lg overflow-hidden">
+                        <img src="Gourmet Sales Analysis.png" alt="Project 3 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-white">Project 3: Gourmet Food Suplier Sales Analysis</h3>
+                            <h2>Description :</h2><p class="text-slate-400 mb-4">To conduct an end-to-end business analysis using SQL and Bi tools, with the aim of uncovering data-driven insights on sales performance, customer behaviour, supplier relationships, and shipping efficiency.</p>
+                            <h2>Key Insights :</h2>
+                            <li class="text-slate-400 mb-4">Strengthen High performing customers through loyalty programs especially for top buyers like "save-a-lot Markets" and "ErnstHandel"</li>
+                            <li class="text-slate-400 mb-4">Implement Targetted Marketting in under performing countries like Ireland, Sweeden, Canada to grow customer base.</li>
+                            <li class="text-slate-400 mb-4">Recognizing top performing Employees to provide bonus on the performance that encourages underperforming employees to give their best.</li>                
+                            <li class="text-slate-400 mb-4">Reviewing logistics performance of underutilized shippers. If feasibl, renogotiate contracts or streamline shipping options to favour the mostefficient carriers.</li>
+                            <div class="mb-4">
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">SQL</span>
+                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Power Bi</span>                                
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <a href="northwind.pbix" class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
+                                <a href="https://github.com/Danish-ud/Gourmet-Food-Supplier-Sales-Analysis" target="_blank" class="text-slate-400 hover:text-white">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-28"> <!-- Added a background color for contrast as per the new theme -->
+  <div class="container mx-auto px-6 text-center text-white">
+    <h2 class="text-4xl font-bold mb-4">Initiate Contact</h2>
+    <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">I'm currently seeking new opportunities. Let's connect and discuss how my skills can bring value to your team.</p>
+
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
+      <!-- Email Link with Icon and Text -->
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=khajadanishuddin@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
+        <!-- Email Icon (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+          <rect width="20" height="16" x="2" y="4" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        <span class="text-lg">khajadanishuddin@gmail.com</span>
+      </a>
+
+      <!-- GitHub Link with Icon -->
+      <a href="https://github.com/Danish-ud?tab=repositories" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
+        <!-- GitHub Icon (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1.09 0-3 1.5a9.2 9.2 0 0 0-6 0c-2-1.5-3-1.5-3-1.5-.5.92-.8 2.1-.77 3.46 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+          <path d="M9 18c-4.51 2-5-2-7-2"/>
+        </svg>
+        <span class="text-lg">GitHub</span>
+      </a>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2024 Khaja Danishuddin // All Rights Reserved</p>
         </div>
     </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
