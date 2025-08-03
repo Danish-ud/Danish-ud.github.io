@@ -19,7 +19,7 @@
             color: #e2e8f0; /* slate-200 */
         }
         h1, h2, h3 {
-             font-family: 'Exo 2', sans-serif;
+            font-family: 'Exo 2', sans-serif;
         }
 
         /* Animated gradient background for the body */
@@ -96,6 +96,35 @@
             50% { border-color: #38bdf8; }
         }
 
+        /* Custom message box styles */
+        .message-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .message-box.show {
+            opacity: 1;
+        }
+        .message-box.success {
+            background-color: #22c55e; /* green-500 */
+            color: white;
+        }
+        .message-box.error {
+            background-color: #ef4444; /* red-500 */
+            color: white;
+        }
+        .message-box.loading {
+            background-color: #3b82f6; /* blue-500 */
+            color: white;
+        }
     </style>
 </head>
 <body class="text-slate-200">
@@ -147,11 +176,11 @@
                 <p class="text-lg text-slate-300 leading-relaxed text-center">
                     I am passionate about leveraging data to solvereal-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models, and communicate findings using interactive Dashboards clearly to diverse audiences.
                 
-                     </p>
+                    </p>
             </div>
         </section>
         
-           <section id="skills" class="py-28">
+            <section id="skills" class="py-28">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-16 text-white">Technical Skills</h2>
 
@@ -208,8 +237,7 @@
             </div>
         </div>
     </section>
-</body>
-</html>   
+    
         <!-- Projects Section -->
         <section id="projects" class="py-28">
             <div class="container mx-auto px-6">
@@ -218,7 +246,7 @@
 
                     <!-- Project Card 1 -->
                     <div class="glass-card rounded-lg overflow-hidden">
-                        <img src="Restaurant Rating.png" alt="Project 1 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Restaurant+Rating+Analysis" alt="Project 1 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/E2E8F0?text=Image+Not+Found';">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-3 text-white">Project 1: Restaurant Rating Analysis</h3>
                             <h2>Description :</h2><p class="text-slate-400 mb-4">The primary goal of this project is to drive insights from multiple datasets related to restaurants. In this project I performed a detailed analysis of restaurant rating using python(Pandas) for data cleaning and transformation, and power bi for data visualization.</p>
@@ -243,8 +271,8 @@
                     
                     
                     <!-- Add more project cards here following the same structure -->
-                     <div class="glass-card rounded-lg overflow-hidden">
-                        <img src="Churn Analysis.png" alt="Project 2 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="glass-card rounded-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Churn+Analysis" alt="Project 2 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/E2E8F0?text=Image+Not+Found';">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-3 text-white">Project 2: Telecom Customer Churn Analysis</h3>
                             <h2>Description :</h2><p class="text-slate-400 mb-4">The primary goal of this project is to identify key factors that lead to customer churn. The goal is to give actionable insights on customer churn to reduce churn and built an interactive Dashboard to show findings.</p>
@@ -266,8 +294,8 @@
                             </div>
                         </div>
                     </div>
-                     <div class="glass-card rounded-lg overflow-hidden">
-                        <img src="Gourmet Sales Analysis.png" alt="Project 3 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="glass-card rounded-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Gourmet+Sales+Analysis" alt="Project 3 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/E2E8F0?text=Image+Not+Found';">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-3 text-white">Project 3: Gourmet Food Suplier Sales Analysis</h3>
                             <h2>Description :</h2><p class="text-slate-400 mb-4">To conduct an end-to-end business analysis using SQL and Bi tools, with the aim of uncovering data-driven insights on sales performance, customer behaviour, supplier relationships, and shipping efficiency.</p>
@@ -296,33 +324,39 @@
         
         <!-- Contact Section -->
         <section id="contact" class="py-28"> <!-- Added a background color for contrast as per the new theme -->
-  <div class="container mx-auto px-6 text-center text-white">
-    <h2 class="text-4xl font-bold mb-4">Initiate Contact</h2>
-    <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">I'm currently seeking new opportunities. Let's connect and discuss how my skills can bring value to your team.</p>
+            <div class="container mx-auto px-6 text-center text-white">
+                <h2 class="text-4xl font-bold mb-4">Initiate Contact</h2>
+                <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">I'm currently seeking new opportunities. Let's connect and discuss how my skills can bring value to your team.</p>
 
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
-      <!-- Email Link with Icon and Text -->
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=khajadanishuddin@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
-        <!-- Email Icon (SVG) -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
-          <rect width="20" height="16" x="2" y="4" rx="2"/>
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-        </svg>
-        <span class="text-lg">khajadanishuddin@gmail.com</span>
-      </a>
+                <!-- Message Box for feedback -->
+                <div id="message-box" class="message-box" role="alert"></div>
 
-      <!-- GitHub Link with Icon -->
-      <a href="https://github.com/Danish-ud?tab=repositories" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
-        <!-- GitHub Icon (SVG) -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
-          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1.09 0-3 1.5a9.2 9.2 0 0 0-6 0c-2-1.5-3-1.5-3-1.5-.5.92-.8 2.1-.77 3.46 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-          <path d="M9 18c-4.51 2-5-2-7-2"/>
-        </svg>
-        <span class="text-lg">GitHub</span>
-      </a>
-    </div>
-  </div>
-</section>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
+                    <!-- Email Link with Icon and Text -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=khajadanishuddin@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
+                        <!-- Email Icon (SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                        <span class="text-lg">khajadanishuddin@gmail.com</span>
+                    </a>
+
+                    <!-- GitHub Link with Icon -->
+                    <a href="https://github.com/Danish-ud?tab=repositories" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
+                        <!-- GitHub Icon (SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1.09 0-3 1.5a9.2 9.2 0 0 0-6 0c-2-1.5-3-1.5-3-1.5-.5.92-.8 2.1-.77 3.46 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                            <path d="M9 18c-4.51 2-5-2-7-2"/>
+                        </svg>
+                        <span class="text-lg">GitHub</span>
+                    </a>
+                </div>
+                <div class="text-xs text-slate-600 mt-8">
+                    Your unique visitor ID: <span id="user-id-display" class="font-mono text-slate-500">Loading...</span>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -332,7 +366,12 @@
         </div>
     </footer>
 
-    <script>
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
         // JavaScript for mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -340,6 +379,103 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Firebase Initialization and Visitor Tracking Logic
+        let db;
+        let auth;
+        let currentUserId = 'anonymous'; // Default to anonymous
+
+        const messageBox = document.getElementById('message-box');
+        const userIdDisplay = document.getElementById('user-id-display');
+
+        /**
+         * Displays a message in the message box.
+         * @param {string} message - The message to display.
+         * @param {string} type - The type of message ('success', 'error', 'loading').
+         */
+        function showMessage(message, type) {
+            messageBox.textContent = message;
+            messageBox.className = `message-box show ${type}`;
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000); // Hide after 3 seconds
+        }
+
+        /**
+         * Records visitor data to Firestore.
+         */
+        async function recordVisitorData() {
+            if (!db || !auth || !currentUserId) {
+                console.warn("Firebase or user ID not ready, cannot record visitor data.");
+                return;
+            }
+
+            try {
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const visitorCollectionRef = collection(db, `artifacts/${appId}/users/${currentUserId}/page_visits`);
+
+                await addDoc(visitorCollectionRef, {
+                    timestamp: new Date(),
+                    userAgent: navigator.userAgent,
+                    referrer: document.referrer || 'direct',
+                    screenResolution: `${window.screen.width}x${window.screen.height}`
+                });
+                console.log("Visitor data recorded successfully!");
+                showMessage("Visitor data recorded!", "success");
+            } catch (error) {
+                console.error("Error recording visitor data: ", error);
+                showMessage("Failed to record visitor data.", "error");
+            }
+        }
+
+        /**
+         * Initializes Firebase and authenticates the user.
+         */
+        async function initializeFirebase() {
+            try {
+                // Get Firebase config and app ID from global variables
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+
+                // Initialize Firebase app
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                // Authenticate user
+                if (typeof __initial_auth_token !== 'undefined') {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // Listen for auth state changes to get the user ID
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        currentUserId = user.uid;
+                        userIdDisplay.textContent = currentUserId;
+                        console.log("Firebase initialized. User ID:", currentUserId);
+                    } else {
+                        // User is signed out or anonymous
+                        currentUserId = crypto.randomUUID(); // Generate a random ID for anonymous
+                        userIdDisplay.textContent = currentUserId;
+                        console.log("Firebase initialized. Anonymous User ID:", currentUserId);
+                    }
+                    // Record visitor data once authentication is ready
+                    recordVisitorData();
+                });
+
+            } catch (error) {
+                console.error("Error initializing Firebase:", error);
+                showMessage("Failed to initialize Firebase. Please try again later.", "error");
+            }
+        }
+
+        // Initialize Firebase when the window loads
+        window.onload = initializeFirebase;
+
     </script>
 
 </body>
+</html>
+
