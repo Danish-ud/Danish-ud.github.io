@@ -1,481 +1,281 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khaja Danishuddin - Data Analyst Portfolio</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Roboto Mono for a techy feel -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Use a futuristic font combination */
-        body {
-            font-family: 'Roboto Mono', monospace;
-            background-color: #020617; /* slate-950 */
-            color: #e2e8f0; /* slate-200 */
-        }
-        h1, h2, h3 {
-            font-family: 'Exo 2', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mature Futuristic Portfolio – Data Analyst</title>
 
-        /* Animated gradient background for the body */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 20% 20%, rgba(29, 78, 216, 0.15), transparent 30%),
-                        radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.15), transparent 30%);
-            animation: move-glow 20s infinite alternate;
-        }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet" />
 
-        @keyframes move-glow {
-            from {
-                transform: translate(0, 0);
-            }
-            to {
-                transform: translate(100px, 50px);
-            }
-        }
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 
-        /* Glassmorphism effect for the header */
-        .glass-header {
-            background: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with opacity */
-        }
-
-        /* Glowing effect for buttons and links */
-        .glow-on-hover {
-            transition: all 0.3s ease;
-            box-shadow: 0 0 5px rgba(56, 189, 248, 0), 0 0 10px rgba(56, 189, 248, 0);
-        }
-        .glow-on-hover:hover {
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.6), 0 0 25px rgba(56, 189, 248, 0.4);
-            transform: scale(1.05);
-        }
-        
-        /* Glassmorphism for cards */
-        .glass-card {
-            background: rgba(15, 23, 42, 0.5); /* slate-900 with opacity */
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(51, 65, 85, 0.5);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(56, 189, 248, 0.7);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Typing effect for hero text */
-        .typewriter h1 {
-            overflow: hidden;
-            border-right: .15em solid #38bdf8; /* sky-400 */
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .1em;
-            /* Increased steps to accommodate the full name "Khaja Danishuddin" (20 characters + spaces) */
-            animation: typing 3.5s steps(20, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #38bdf8; }
-        }
-
-        /* Custom message box styles */
-        .message-box {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: bold;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        .message-box.show {
-            opacity: 1;
-        }
-        .message-box.success {
-            background-color: #22c55e; /* green-500 */
-            color: white;
-        }
-        .message-box.error {
-            background-color: #ef4444; /* red-500 */
-            color: white;
-        }
-        .message-box.loading {
-            background-color: #3b82f6; /* blue-500 */
-            color: white;
-        }
-    </style>
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
-<body class="text-slate-200">
+<body>
+  <!-- Floating gradient glass shapes (subtle, slow, not bouncy) -->
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
 
-    <!-- Header & Navigation -->
-    <header class="glass-header sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-white tracking-wider">
-                <a href="#">KHAJA DANISHUDDIN</a>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="text-slate-300 hover:text-sky-400 font-medium transition-all">about</a>
-                <a href="#skills" class="text-slate-300 hover:text-sky-400 font-medium transition-all">skills</a>
-                <a href="#projects" class="text-slate-300 hover:text-sky-400 font-medium transition-all">projects</a>
-                <a href="#contact" class="text-slate-300 hover:text-sky-400 font-medium transition-all">contact</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-slate-300">
-                <svg class="w-6 h-6" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">about</a>
-            <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">skils</a>
-            <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">projects</a>
-            <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">contact</a>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <a href="#hero" class="brand">
+      <span class="badge">KD</span><span class="brand-text">Khaja Danishuddin</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#experience">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn ghost" href="Danish_cv.pdf" target="_blank" rel="noopener">📄 Resume</a>
+      <button id="modeToggle" class="toggle" aria-label="Toggle color theme"></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="section hero">
+    <div class="hero-inner">
+      <h1 class="holo" data-text="Hi, I’m Khaja Danishuddin">Hi, I’m Khaja Danishuddin</h1>
+      <p class="subtitle">Data Analyst • Explorer of Patterns • Storyteller with Code</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn primary">🔍 Explore My Work</a>
+        <a href="#contact" class="btn secondary">✉️ Let’s Connect</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="about-grid">
+      <div class="about-copy card glass">
+        <h2>About Me</h2>
+        <p>
+         Welcome to my Portfolio! I am a data analyst seeker with a good hands on experience in areas like data cleaning, visualizations, statistical analysis. My expertise lies in SQL, Power Bi, and Python Libraries.
+         I am passionate about leveraging data to solvereal-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models,
+         and communicate findings using interactive Dashboards clearly to diverse audiences.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">SQL Power Level</span>
+            <span class="stat-value">90%</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Data visualizations</span>
+            <span class="stat-value">85%</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Viz Craft</span>
+            <span class="stat-value">88%</span>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="flex items-center py-20 md:min-h-screen">
-            <div class="container mx-auto px-6 text-center">
-                <div class="typewriter max-w-2xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Khaja Danishuddin</h1>
-                </div>
-                <p class="text-lg md:text-xl text-slate-400 font-light mb-10 max-w-3xl mx-auto">A Passionate Data Analyst dedicated to transforming complex data into actionable insights.</p>
-                <a href="#projects" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition-all shadow-lg glow-on-hover">Explore My Work</a>
-            </div>
-        </section>
+      <div class="about-visual card glass">
+        <!-- Replace with your photo if you like -->
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="Futuristic interface" />
+      </div>
+    </div>
+  </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-28">
-            <div class="container mx-auto px-6 max-w-4xl glass-card rounded-lg p-10">
-                <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
-                <p class="text-lg text-slate-300 leading-relaxed text-center">
-                    Welcome to my Portfolio! I am a data analyst seeker with a good hands on experience in areas like data cleaning, visualizations, statistical analysis. My expertise lies in SQL, Power Bi, and Python Libraries.
-                <p class="text-lg text-slate-300 leading-relaxed text-center">
-                    I am passionate about leveraging data to solvereal-world problems and drive informed decision-making. I thrive in environments where I can apply my analytical skills to uncover trends, build predictive models, and communicate findings using interactive Dashboards clearly to diverse audiences.
-                
-                    </p>
-            </div>
-        </section>
-        
-            <section id="skills" class="py-28">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-white">Technical Skills</h2>
+  <!-- SKILLS -->
+  <section id="skills" class="section skills">
+    <h2>Skills & Tools</h2>
 
-            <!-- Programming and Databases Section -->
-            <h3 class="text-3xl font-bold text-center mb-10 text-sky-300">Programming and Databases</h3>
-            <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-10 text-center mb-20">
-                <!-- Python (Pandas, NumPy, Scikit-learn) -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for Python -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">Python <br><span class="text-sm opacity-80">(Pandas, NumPy, Scikit-learn)</span></p>
-                </div>
-                <!-- SQL -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for SQL -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">SQL</p>
-                </div>
-                <!-- NoSQL -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for NoSQL (generic database icon) -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10m0 0l4-4m-4 4l4 4m0 0h16a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">NoSQL</p>
-                </div>
-            </div>
+    <div class="skills-grid">
+      <!-- Circular meters (animated via GSAP) -->
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="90" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">SQL</div>
+        <div class="desc">Joins, CTEs, Window Functions, Optimization</div>
+      </div>
 
-            <!-- Data Visualization Section -->
-            <h3 class="text-3xl font-bold text-center mb-10 text-sky-300">Data Visualization</h3>
-            <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-                <!-- Tableau -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for Tableau (chart/graph) -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">Tableau</p>
-                </div>
-                <!-- Power BI -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for Power BI (bars/chart) -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">Power BI</p>
-                </div>
-                <!-- Matplotlib -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for Matplotlib (pie chart) -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">Matplotlib</p>
-                </div>
-                <!-- Seaborn -->
-                <div class="glass-card p-6 rounded-lg flex flex-col items-center justify-center">
-                    <!-- Icon for Seaborn (line chart) -->
-                    <svg class="w-16 h-16 mb-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8L11 2m9 9v8m0 0H7m14 0l-9-9"></path></svg>
-                    <p class="font-semibold text-lg mt-2 text-white">Seaborn</p>
-                </div>
-            </div>
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="85" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">Excel</div>
+        <div class="desc">Power Query, Pivot, Modeling, What-If</div>
+      </div>
+
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="80" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">Power BI</div>
+        <div class="desc">DAX, Data Modeling, UX for Insight</div>
+      </div>
+
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="78" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">Tableau</div>
+        <div class="desc">Storytelling, LODs, Actions</div>
+      </div>
+
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="82" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">Python</div>
+        <div class="desc">Pandas, EDA, Scikit-learn basics</div>
+      </div>
+
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="60" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">Cloud</div>
+        <div class="desc">BigQuery, Snowflake familiarity</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+      <article class="project card overlay">
+        <img src="https://images.unsplash.com/photo-1551281044-8d8d0d8b8a57?q=80&w=1200&auto=format&fit=crop" alt="Sales dashboard" />
+        <div class="overlay-content">
+          <h3>Sales Performance Dashboard</h3>
+          <p>Power BI + SQL: revenue trends, cohort & contribution analysis, drill-through UX.</p>
+          <a class="btn ghost small" href="#" target="_blank" rel="noopener">View Case Study</a>
         </div>
-    </section>
-    
-        <!-- Projects Section -->
-        <section id="projects" class="py-28">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-16 text-white">My Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      </article>
 
-                    <!-- Project Card 1 -->
-                    <div class="glass-card rounded-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Restaurant+Rating+Analysis" alt="Project 1 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/E2E8F0?text=Image+Not+Found';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-3 text-white">Project 1: Restaurant Rating Analysis</h3>
-                            <h2>Description :</h2><p class="text-slate-400 mb-4">The primary goal of this project is to drive insights from multiple datasets related to restaurants. In this project I performed a detailed analysis of restaurant rating using python(Pandas) for data cleaning and transformation, and power bi for data visualization.</p>
-                            <h2>Key Insights :</h2>
-                            <li class="text-slate-400 mb-4"> Mexican Cuisine is the most preferred cuisine among customers, but the food offered by the restaurants has a low rating. This highlights a gap between a good taste restaurant based on popularity</li>
-                            <li class="text-slate-400 mb-4"> A significant portion of customers are students and single, suggesting restaurant should tailor offerings and ambience to attract younger people.</li>
-                            <li class="text-slate-400 mb-4"> Restaurants offering valet parking could really enhance the customer satisfaction and rating.</li>
-                            <li class="text-slate-400 mb-4">Consumers prefer restaurants with separate smoking are. So, restaurants arranging a separate smoking area would enhance their ratings</li>
-                            <div class="mb-4">
-                                
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Python Libraries</span>
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Power Bi</span>
-                            </div>
-                            <div class="flex justify-between items-center mt-6">
-                                <a href="Restaurant rating.pbix" class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
-                                <a href="https://github.com/Danish-ud/Restaurant-Rating-Analysis" target="_blank" class="text-slate-400 hover:text-white">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <!-- Add more project cards here following the same structure -->
-                    <div class="glass-card rounded-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Churn+Analysis" alt="Project 2 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/E2E8F0?text=Image+Not+Found';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-3 text-white">Project 2: Telecom Customer Churn Analysis</h3>
-                            <h2>Description :</h2><p class="text-slate-400 mb-4">The primary goal of this project is to identify key factors that lead to customer churn. The goal is to give actionable insights on customer churn to reduce churn and built an interactive Dashboard to show findings.</p>
-                            <h2>Key Insights :</h2>
-                            <li class="text-slate-400 mb-4">Encouraging customers with exciting offers or discounts or exclusive features for switching their package from month-month to one year or two year packages </li>
-                            <li class="text-slate-400 mb-4">Customer churning under utilize their services like gb used or call allowances, So provide them personalized plans, lower-tier plans for low usage users</li>
-                            <li class="text-slate-400 mb-4">Churn is more in senior citizens and married users. So, provide personalized family or couple plans to boost retention among users.</li>
-                            <li class="text-slate-400 mb-4">Churn is more on male customers. So, Conduct surveys with targetted male customers eto identify potential service gaps.</li>                                 
-                            <div class="mb-4">
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">SQL</span>
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Python & Libraries</span>
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Tableau</span>
-                            </div>
-                            <div class="flex justify-between items-center mt-6">
-                                <a href="Customer Churn Overview.twb" download class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
-                                <a href="https://github.com/Danish-ud/Customer-Churn-Overview" target ="_blank" class="text-slate-400 hover:text-white">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-card rounded-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/0F172A/E2E8F0?text=Gourmet+Sales+Analysis" alt="Project 3 Screenshot" class="w-full h- object-cover opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/E2E8F0?text=Image+Not+Found';">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-3 text-white">Project 3: Gourmet Food Suplier Sales Analysis</h3>
-                            <h2>Description :</h2><p class="text-slate-400 mb-4">To conduct an end-to-end business analysis using SQL and Bi tools, with the aim of uncovering data-driven insights on sales performance, customer behaviour, supplier relationships, and shipping efficiency.</p>
-                            <h2>Key Insights :</h2>
-                            <li class="text-slate-400 mb-4">Strengthen High performing customers through loyalty programs especially for top buyers like "save-a-lot Markets" and "ErnstHandel"</li>
-                            <li class="text-slate-400 mb-4">Implement Targetted Marketting in under performing countries like Ireland, Sweeden, Canada to grow customer base.</li>
-                            <li class="text-slate-400 mb-4">Recognizing top performing Employees to provide bonus on the performance that encourages underperforming employees to give their best.</li>                                 
-                            <li class="text-slate-400 mb-4">Reviewing logistics performance of underutilized shippers. If feasibl, renogotiate contracts or streamline shipping options to favour the mostefficient carriers.</li>
-                            <div class="mb-4">
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">SQL</span>
-                                <span class="inline-block bg-slate-700 rounded-full px-3 py-1 text-sm font-semibold text-sky-300 mr-2 mb-2">Power Bi</span>                                 
-                            </div>
-                            <div class="flex justify-between items-center mt-6">
-                                <a href="northwind.pbix" class="text-sky-400 font-semibold hover:underline">Download-Dashboard</a>
-                                <a href="https://github.com/Danish-ud/Gourmet-Food-Supplier-Sales-Analysis" target="_blank" class="text-slate-400 hover:text-white">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Contact Section -->
-        <section id="contact" class="py-28"> <!-- Added a background color for contrast as per the new theme -->
-            <div class="container mx-auto px-6 text-center text-white">
-                <h2 class="text-4xl font-bold mb-4">Initiate Contact</h2>
-                <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">I'm currently seeking new opportunities. Let's connect and discuss how my skills can bring value to your team.</p>
-
-                <!-- Message Box for feedback -->
-                <div id="message-box" class="message-box" role="alert"></div>
-
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
-                    <!-- Email Link with Icon and Text -->
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=khajadanishuddin@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
-                        <!-- Email Icon (SVG) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
-                            <rect width="20" height="16" x="2" y="4" rx="2"/>
-                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                        </svg>
-                        <span class="text-lg">khajadanishuddin@gmail.com</span>
-                    </a>
-
-                    <!-- GitHub Link with Icon -->
-                    <a href="https://github.com/Danish-ud?tab=repositories" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sky-500 hover:text-sky-400 transition-all transform hover:scale-110">
-                        <!-- GitHub Icon (SVG) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
-                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1.09 0-3 1.5a9.2 9.2 0 0 0-6 0c-2-1.5-3-1.5-3-1.5-.5.92-.8 2.1-.77 3.46 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                            <path d="M9 18c-4.51 2-5-2-7-2"/>
-                        </svg>
-                        <span class="text-lg">GitHub</span>
-                    </a>
-                </div>
-                <div class="text-xs text-slate-600 mt-8">
-                    Your unique visitor ID: <span id="user-id-display" class="font-mono text-slate-500">Loading...</span>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-6 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center text-slate-500">
-            <p>&copy; 2024 Khaja Danishuddin // All Rights Reserved</p>
+      <article class="project card overlay">
+        <img src="https://images.unsplash.com/photo-1534759846116-57968a6b17f8?q=80&w=1200&auto=format&fit=crop" alt="Churn analysis" />
+        <div class="overlay-content">
+          <h3>Customer Churn Analytics</h3>
+          <p>Python + SQL: feature engineering, drivers, retention playbook with visuals.</p>
+          <a class="btn ghost small" href="#" target="_blank" rel="noopener">View Case Study</a>
         </div>
-    </footer>
+      </article>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+      <article class="project card overlay">
+        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=1200&auto=format&fit=crop" alt="Forecasting" />
+        <div class="overlay-content">
+          <h3>Time‑Series Forecasting</h3>
+          <p>ARIMA baseline + error analysis; practical accuracy for planning.</p>
+          <a class="btn ghost small" href="#" target="_blank" rel="noopener">View Case Study</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        // JavaScript for mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+  <!-- CERTIFICATIONS (horizontal scroll) -->
+  <section id="certs" class="section certs">
+    <h2>Certifications</h2>
+    <div class="track">
+      <div class="cert card glass">
+        <div class="cert-badge">Google</div>
+        <h4>Data Analytics Professional</h4>
+        <span class="meta">2025</span>
+      </div>
+      <div class="cert card glass">
+        <div class="cert-badge">Microsoft</div>
+        <h4>Power BI Certification</h4>
+        <span class="meta">2025</span>
+      </div>
+      <div class="cert card glass">
+        <div class="cert-badge">Snowflake</div>
+        <h4>Snowflake Fundamentals</h4>
+        <span class="meta">2025</span>
+      </div>
+      <div class="cert card glass">
+        <div class="cert-badge">Coursera</div>
+        <h4>SQL for Data Science</h4>
+        <span class="meta">2024</span>
+      </div>
+    </div>
+  </section>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  <!-- EXPERIENCE / JOURNEY -->
+  <section id="experience" class="section journey">
+    <h2>Journey</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="dot"></div>
+        <div class="content glass">
+          <h4>2025 — Analytics Projects</h4>
+          <p>Shipped 3 end-to-end projects across churn, sales forecasting, and dashboards.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="dot"></div>
+        <div class="content glass">
+          <h4>2024 — Foundations</h4>
+          <p>Deep dive in SQL, Excel, Tableau/Power BI. Started writing data stories.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="dot"></div>
+        <div class="content glass">
+          <h4>Ongoing — Always Learning</h4>
+          <p>Experimenting with forecasting, feature engineering, and better narratives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Firebase Initialization and Visitor Tracking Logic
-        let db;
-        let auth;
-        let currentUserId = 'anonymous'; // Default to anonymous
+ <!-- CONTACT -->
+<section id="contact" class="section contact">
+  <h2>Contact</h2>
+  <form id="contactForm" class="card glass form">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="name" required />
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" required />
+    </div>
+    <div class="field">
+      <label>Message</label>
+      <textarea name="message" rows="4" required></textarea>
+    </div>
+    <button class="btn primary" type="submit">Send Message</button>
+  </form>
+  <p id="formMessage" style="display:none; color: lime;"></p>
+</section>
 
-        const messageBox = document.getElementById('message-box');
-        const userIdDisplay = document.getElementById('user-id-display');
 
-        /**
-         * Displays a message in the message box.
-         * @param {string} message - The message to display.
-         * @param {string} type - The type of message ('success', 'error', 'loading').
-         */
-        function showMessage(message, type) {
-            messageBox.textContent = message;
-            messageBox.className = `message-box show ${type}`;
-            setTimeout(() => {
-                messageBox.classList.remove('show');
-            }, 3000); // Hide after 3 seconds
-        }
-
-        /**
-         * Records visitor data to Firestore.
-         */
-        async function recordVisitorData() {
-            if (!db || !auth || !currentUserId) {
-                console.warn("Firebase or user ID not ready, cannot record visitor data.");
-                return;
-            }
-
-            try {
-                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-                const visitorCollectionRef = collection(db, `artifacts/${appId}/users/${currentUserId}/page_visits`);
-
-                await addDoc(visitorCollectionRef, {
-                    timestamp: new Date(),
-                    userAgent: navigator.userAgent,
-                    referrer: document.referrer || 'direct',
-                    screenResolution: `${window.screen.width}x${window.screen.height}`
-                });
-                console.log("Visitor data recorded successfully!");
-                showMessage("Visitor data recorded!", "success");
-            } catch (error) {
-                console.error("Error recording visitor data: ", error);
-                showMessage("Failed to record visitor data.", "error");
-            }
-        }
-
-        /**
-         * Initializes Firebase and authenticates the user.
-         */
-        async function initializeFirebase() {
-            try {
-                // Get Firebase config and app ID from global variables
-                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-                const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-
-                // Initialize Firebase app
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-
-                // Authenticate user
-                if (typeof __initial_auth_token !== 'undefined') {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-
-                // Listen for auth state changes to get the user ID
-                onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        currentUserId = user.uid;
-                        userIdDisplay.textContent = currentUserId;
-                        console.log("Firebase initialized. User ID:", currentUserId);
-                    } else {
-                        // User is signed out or anonymous
-                        currentUserId = crypto.randomUUID(); // Generate a random ID for anonymous
-                        userIdDisplay.textContent = currentUserId;
-                        console.log("Firebase initialized. Anonymous User ID:", currentUserId);
-                    }
-                    // Record visitor data once authentication is ready
-                    recordVisitorData();
-                });
-
-            } catch (error) {
-                console.error("Error initializing Firebase:", error);
-                showMessage("Failed to initialize Firebase. Please try again later.", "error");
-            }
-        }
-
-        // Initialize Firebase when the window loads
-        window.onload = initializeFirebase;
-
-    </script>
-
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="left">Built with 💡 & SQL</div>
+      <div class="right">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="Kaggle">Kaggle</a>
+        <a href="mailto:khajadanishuddin@gmail.com" aria-label="Email">Email</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+
+</html>
+
 
