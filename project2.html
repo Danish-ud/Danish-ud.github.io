@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecom Churn/title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+       background: #dee0e3;;
+      color: #030303;
+      line-height: 1.6;
+    }
+    header {
+      padding: 30px;
+      background:transparent radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%);
+      text-align: center;
+      font-size: 32px;
+      font-weight: 1000;
+      color: #ea8108;
+      box-shadow: 0 2px 8px rgba(9, 9, 9, 0.5);
+    }
+    .container {
+      max-width: 2000px;
+      margin: 40px auto;
+      padding: 30px;
+      background:transparent radial-gradient(1200px 600px at 10% -10%, rgba(235, 239, 240, 0.08), transparent 100%);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(1, 1, 1, 0.5);
+    }
+    .project-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #ea8108;
+      text-align: center;
+    }
+    .hero-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 25px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #ea8108;
+      border-left: 4px solid #ea8108;
+      padding-left: 10px;
+    }
+    .tech-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tech-list li {
+      background: #31364328;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #50535b28;
+      transition: transform 0.2s;
+    }
+    .tech-list li:hover {
+      transform: translateY(-4px);
+      border-color: #ea8108;
+    }
+    .outcomes {
+      background: #31364328;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #50535b28;
+    }
+    .outcomes ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 18px;
+      background: #ea8108;
+      color: #0f172a;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-back:hover {
+      background: #ea8108;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header>Telecom Customer</header>
+  <div class="container">
+    <h1 class="project-title">Restaurant Rating Analysis Dashboard</h1>
+    <div style="display: flex; justify-content: center; align-items: center; height: vh;">
+  <img src="churn.png"/>
+</div>
+    <div class="section">
+      <h2>Overview</h2>
+      <p>
+      Telecom companies lose a significant portion of their revenue due to customer churn. The main aim of this project is to find the reasosn why customers are leaving the telecom companies. Find out all the reasons affecting customer churn and recommend business solutions to tackle those problems.</p>
+      <li>Identify key factors that lead to customer churn</li>
+      <li>Understand patterns and behaviors of churned customers</li>
+      <li>Provide actionable insights to reduce churn</li>
+      <li>Build an interactive Tableau dashboard to present findings</li> 
+<h2>Tables</h2>
+<p>The dataset contains 4 interrelated tables:</p>
+<li>customers:- Demographic information of customers</li>
+<li>services :- Details of services subscribed.</li>
+<li>usage :-Monthly data usage and minutes used.</li>
+<li>churn :-Customer churn status and billing details.</li>
+    </div>
+    <div class="section">
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>SQL: Data cleaning, joins, aggregation, transformation</li>
+        <li>Python: Exploratory Data Analysis using pandas, matplotlib, seaborn</li>
+        <li>Tableau: Data visualization and dashboard creation</li>
+      </ul>
+    </div>  
+    <div class ="section">
+    <h2>Steps Performed</h2> 
+    <h3>1.Data Cleaning(SQL)</h3>
+    <li>Identified Duplicate values through out the Data set and got rid of it.</li>
+    <li>Handled Null vales and Missing values with utmost precautions.</li>
+    <li>With the help of join, joined the important data columns into a single table "Clean Data"</li>
+    
+    <h3>2.Exploratory Data Analysis(Python)</h3>
+    <p>Performed Exploratory Data Analysis (EDA) with the help of Python and its libraries Pandas, Matplotlib and, Seaborn. With the help of Graph features in matplot and seaborn analyzed</p>
+    <li>Churn Rate of the Telecom.</li>
+    <li>Customer Demographics like senir citizen, married... impact on the Churn Rate</li>
+    <li>Analyzed monthly Charges impact on Churn Rate</li>
+    <li>Examined Services usage impact on Churn Rate.</li>
+
+    <h3>3. Dashboard & KPI Visualization (Tableau)</h3>
+    <p>Based on the Insigts generated through Exploratory Data Analysis (EDA) Created Kpi Visuals and Dashboard in Tableau.</p>
+    <li>Created Dashboard that heps us to identify the key factors that lead to customer churn.</li>
+    <li>The Dashboard contains different Kpi's that help us to convey our insights more crisp and cearly.</li>
+    <li>It contains different Customer demograpic visuals to convey the message. Below is the Screenshort of the Dashboard and Tableau file where you can check the direct impact throug filters.</li>
+    <div class="section">
+      <h2>Visuals & Insights</h2>
+      <p>Below are the Dashboards that speify the goal to client in a clearer manner.</p>
+      <img src="Customer Churn Dashboard.png" alt="Chart Placeholder" style="width:100%; border-radius:10px; margin-top:15px;">
+      <li>The Current Churn Rate of the telecom company is around 24% which higher, neccesary steps should be taken to control the churning customers</li>
+      <li>From The above Dashboard we can clearly see that around 1/4 th of the total customers have churned.</li>
+      <li>The monthly churn rate line graph shows that January and December are peak months for churning customers.</li>
+      <li>Overall Churn Rate of males is higher than the Churn Rate of Females.</li>
+      <li>While in histogram We can clearly see the underutilization of resoursces.</li>
+      <li>Customers with mont to month plan are more likey to churn.</li>
+      <li>Partner and Senior Citizen also plays a crucial factor among churning customers.</li>
+      <h2>Recommendations</h2>
+      <div class="section">
+    
+        <h3>Encourage Long-Term Contracts</h3>
+          <li>Customers on month-to-month plans exhibit significantly higher churn. Recommendation Offer discounts, cashback, or exclusive features for customers switching to 1-year or 2-year contracts, and Introduce auto-renewal benefits or loyalty points for long-term users.</li>
+          <h3>Preemptive Retention During High-Risk Months</h3>
+          <li>Churn peaks during December and January. Recommend Launch targeted retention campaigns during Q4 and early Q1, and Provide holiday or new year incentives, including data bonuses, plan upgrades, or limited-time offers</li>
+          <h3>Address Underutilization of Services</h3>
+          <li>Histogram plots reveal many customers are not using their full GB or call allowances. I Recommend Segment and offer personalized, lower-tier plans to low-usage users and, Educate customers about plan benefits to increase engagement and satisfaction</li>
+          <h3>Focus on Senior Citizens & Partnered Customers</h3>
+          <li>Churn is slightly higher among senior citizens and customers with partners. I Recommend Design senior-friendly plans with simplified services and exclusive support and, Introduce family or couple plans to boost retention among partnered users.</li>
+          <h3>Understand and Act on Gender-Based Trends</h3>
+          <li>Churn rate is higher among male customers.I Recommend Conduct customer interviews or surveys to identify potential service gaps and, Run gender-focused marketing or engagement initiatives to address specific concerns.</li>
+      </div>
+      </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

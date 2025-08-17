@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Sales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+       background: #dee0e3;;
+      color: #030303;
+      line-height: 1.6;
+    }
+    header {
+      padding: 30px;
+      background:transparent radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%);
+      text-align: center;
+      font-size: 32px;
+      font-weight: 1000;
+      color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(9, 9, 9, 0.5);
+    }
+    .container {
+      max-width: 2000px;
+      margin: 40px auto;
+      padding: 30px;
+      background:transparent radial-gradient(1200px 600px at 10% -10%, rgba(235, 239, 240, 0.08), transparent 100%);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(1, 1, 1, 0.5);
+    }
+    .project-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #38bdf8;
+      text-align: center;
+    }
+    .hero-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 25px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #38bdf8;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+    .tech-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tech-list li {
+      background: #31364328;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #50535b28;
+      transition: transform 0.2s;
+    }
+    .tech-list li:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+    }
+    .outcomes {
+      background: #31364328;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #50535b28;
+    }
+    .outcomes ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 18px;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-back:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header>Restaurant Rating</header>
+  <div class="container">
+    <h1 class="project-title">Restaurant Rating Analysis Dashboard</h1>
+    <div style="display: flex; justify-content: center; align-items: center; height: vh;">
+  <img src="rester.png"/>
+</div>
+    <div class="section">
+      <h2>Overview</h2>
+      <p>
+      In this project, I performed a detailed analysis of restaurant ratings using Python (Pandas) for data cleaning and transformation, and Power BI for data visualization. The datasets include various aspects of restaurants such as customer ratings, cuisines, cost, location, and service quality.</p>
+       <p> The project consists of 5 relational tables, which were merged to create a single, analysis-ready dataset. These include:</p>
+<h2>Tables</h2>
+<li>Consumers Table – It has details of consumers like name, ID, location, occupation, marital status, drink or smoking preferences .</li>
+<li>comsumer preferences Table – consumer id, preferred cuisine .</li>
+<li>restaurants Table – It has basic details about the restaurants, location .</li>
+<li>restaurant cuisines Table – Information about restaurants, cuisine they offer.</li>
+<li>ratings – customer id, restaurant id, rating.</li>
+      <h2>Objectives</h2>
+        <li>Understand rating patterns among restaurants in Mexico.
+        <li>Identify factors influencing customer ratings (e.g., location, price range, cuisines).</li>
+        <li>Discover trends and anomalies using data visualization techniques.</li>
+    </div>
+    <div class="section">
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>Python – Used for data cleaning, transformation, and merging of datasets</li>
+        <li>Pandas – For data manipulation and preprocessing.</li>
+        <li>Power BI – To create dynamic dashboards and visualizations.</li>
+      </ul>
+    </div>   
+    <div class="section">
+      <h2>Visuals & Insights</h2>
+      <p>Below are the Dashboards that speify the goal to client in a clearer manner.</p>
+      <img src="Customer Data analyze.png" alt="Chart Placeholder" style="width:100%; border-radius:10px; margin-top:15px;">
+      <h3>Customer data who Rated Restaurants Demographics</h3>
+      <li>This dashboard provides key insights into consumer preferences and demographics, enabling data-driven decisions for targeted marketing and service optimization.</li>
+      <li>Cuisine Preference: Mexican cuisine stands out as the most favored option by a significant margin, indicating a strong consumer preference for flavorful, spicy dishes. Restaurants offering high-quality Mexican food are likely to attract more customers.</li>
+      <li>Geographic Distribution: A notable concentration of ratings comes from San Luis Potosí, suggesting that this city represents a major segment of the restaurant's customer base. Localized promotions in this area could yield high engagement.</li>
+      <li>Marital Status: The majority of customers are single, indicating a potential market for restaurants that cater to solo diners or casual social gatherings—ideal for young professionals and students.</li>
+      <li>Occupation & Lifestyle: A significant portion of consumers are students and non-smokers, pointing to the need for budget-friendly, youth-oriented dining experiences in a smoke-free environment.</li>
+      
+      <img src="Rating analyze.png"style="width:100%; border-radius:10px; margin-top:10px;">
+      <h3>Restaura  nt Rating Analysis</h3>
+      <li>Top Performing Restaurants: The chart highlights the top 5 restaurants with the highest overall ratings, offering a benchmark for quality and customer satisfaction standards.</li>
+      <li>Cuisine Quality vs. Popularity: Although Mexican cuisine is the most popular among consumers, its average food rating is comparatively low. This discrepancy suggests that while the demand is high, there is room for improvement in taste and quality. Enhancing flavor and consistency in Mexican dishes could significantly boost customer satisfaction.</li>
+      <li>Smoking Preferences: Restaurants that offer a designated smoking section tend to receive higher ratings, indicating that accommodating diverse customer preferences (without compromising non-smokers' comfort) can positively influence customer experience.</li>
+      <li>Student Demographic Ratings: The average ratings from student customers are notably lower. This may reflect unmet expectations in terms of affordability, ambiance, or service. Creating a vibrant, student-friendly environment—such as casual seating, group offers, or study-friendly spaces—can improve perception among this key segment.</li>
+      <li>Parking Facilities Impact: Restaurants that lack parking space consistently receive lower ratings. Providing adequate parking or valet services, where feasible, would enhance customer convenience and improve overall satisfaction.</li>
+      <h2>Insights</h2>
+      <div class="outcomes">
+        <h3>Consumer Behavior & Demographics</h3>
+          <li>Mexican cuisine is the most preferred among consumers, but its average food rating is low — highlighting a gap between popularity and satisfaction. Improving taste and consistency can boost ratings.</li>
+          <li>San Luis Potosí emerges as the dominant city in the dataset, offering a strong local customer base for targeted promotions.</li>
+          <li>A significant portion of consumers are single and students, suggesting restaurants should tailor offerings and ambiance to attract younger, budget-conscious individuals.</li>
+          <li>Most student consumers give lower average ratings, indicating a need to improve affordability, comfort, and service quality for this group.</li>
+          <li>Non-smoking students form a large part of the customer base, reinforcing the value of a clean, smoke-free environment</li>
+        <h3>Restaurant Features & Operational Insights</h3>
+          <li>The top 5 highest-rated restaurants set a quality benchmark — analyzing their practices can inform improvements for others</li>
+          <li>Restaurants with a designated smoking section receive better ratings, suggesting the value of flexible seating arrangements.</li>
+          <li>Establishments that lack parking facilities tend to receive lower ratings. Offering parking or valet services could significantly enhance customer satisfaction.</li>
+      </div>
+      </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

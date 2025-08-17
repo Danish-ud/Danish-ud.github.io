@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourmet sales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+       background: #dee0e3;;
+      color: #030303;
+      line-height: 1.6;
+    }
+    header {
+      padding: 30px;
+      background:transparent radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%);
+      text-align: center;
+      font-size: 32px;
+      font-weight: 1000;
+      color: #135d22;
+      box-shadow: 0 2px 8px rgba(9, 9, 9, 0.5);
+    }
+    .container {
+      max-width: 2000px;
+      margin: 40px auto;
+      padding: 30px;
+      background:transparent radial-gradient(1200px 600px at 10% -10%, rgba(235, 239, 240, 0.08), transparent 100%);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(1, 1, 1, 0.5);
+    }
+    .project-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #135d22;
+      text-align: center;
+    }
+    .hero-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 25px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #135d22;
+      border-left: 4px solid #135d22;
+      padding-left: 10px;
+    }
+    .tech-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tech-list li {
+      background: #31364328;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #50535b28;
+      transition: transform 0.2s;
+    }
+    .tech-list li:hover {
+      transform: translateY(-4px);
+      border-color: #135d22;
+    }
+    .outcomes {
+      background: #31364328;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #50535b28;
+    }
+    .outcomes ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 18px;
+      background: #135d22;
+      color: #0f172a;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-back:hover {
+      background: #135d22;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header>Gourmet Food Supplier</header>
+  <div class="container">
+    <h1 class="project-title">Gourmet-Food-Supplier-Sales-Analysis
+</h1>
+    <div style="display: flex; justify-content: center; align-items: center; height: vh;">
+  <img src="gour.png"/>
+</div>
+    <div class="section">
+      <h2>Overview</h2>
+      <p>
+      This project analyzes the business operations of Northwind Traders, a global gourmet food supplier. The dataset simulates a real-world relational database containing information on customers, products, orders, employees, suppliers, and shippers.</p>
+      <p>The goal is to perform end-to-end data analysis to extract actionable insights on sales performance, customer behavior, supplier relationships, and shipping efficiency.</p>
+      <p>This analysis demonstrates the use of relational data handling, business KPIs tracking, and storytelling with dashboards.</p>
+<h2>Business Objectives</h2>
+<li>Track overall and category-wise sales performance</li>
+<li>Identify high-value customers and sales regions.</li>
+<li>Evaluate employee contributions to sales.</li>
+<li>Measure shipping efficiency and supplier reliability.</li>
+      <h2>Tables</h2>
+      <p>This project has 7 tables which help us to analyse sales report</p>
+        <li>Products table - Consists of data related to the products, their unit price, quantity.</li>
+        <li>Customers table - Contains the informatio about customers, company name, contact details, city..</li>
+        <li>Employee table - Employee deatils including project title.</li>
+        <li>Orders - Details about who ordered, order date, shipping date.</li>
+        <li>Order details - Consists of details of evry order.</li>
+        <li>Categories - Product and its catrgory brocher.</li>
+        <li>Shippers - Info about shippers like name.</li>
+    </div>
+    <div class="section">
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>SQL - Utilized mysql server to handle Data Cleaning and for Exploratory Data Analysis (EDA).</li>
+        <li>Power Bi -For building Dashboards and Data Visulization.</li>
+      </ul>
+    </div>  
+    <div class="section">
+      <h2>Data Cleaning</h2>
+      <li>Performed initial data cleaning using MySQL Workbench, focusing on identifying and resolving duplicate and null values across key tables.</li>
+      <li>Addressed missing data systematically by applying appropriate treatments such as imputation, exclusion, or flagging, based on business logic and context.</li>
+      <li>Removed irrelevant or redundant rows that did not contribute to meaningful analysis (e.g., incomplete transactions, test records).</li>
+      <li>Performed Exploratory Data Analysis on each and every table using primary key and with the help of joins.</li>
+     <li>Below is the Sql file with all the queries performed.</li>
+</div> 
+    <div class="section">
+      <h2>Data Visualisations</h2>
+      <p>Power bi was used to represent Dashoards that were generated by Exploratory Data Analysis(EDA).</p>
+      <li>Found the top selling products overall.</li>
+      <li>Identified trnds on sales over time.</li>
+      <li>Found the top customers by total orders.</li>
+      <h4>Data Connection:</h4>
+      <img src="Data Connection.png" alt="Chart Placeholder" style="width:100%; border-radius:10px; margin-top:15px;">
+      <h3>Sales Analysis</h3>
+      <img src="Sales Analysis.png" alt="Chart Placeholder" style="width:100%; border-radius:10px; margin-top:15px;">
+      <li>The chart highlights the top 5 customers by total order volume. Notably, Save-a-Lot Markets, Ernst Handel, and Quick-Stop emerge as the top three clients, contributing significantly to overall sales.</li>
+      <li>The revenue by product category visualization shows that Beverages, Dairy Products, and Meat/Poultry are the highest-performing categories in terms of revenue generation. In contrast, Grains/Cereals contribute the least, indicating a potential area for promotional or inventory reevaluation.</li>
+      <li>From a geographical perspective, the majority of orders originate from the USA and Germany, whereas countries like Sweden, Ireland, and Canada have minimal engagement. This suggests an opportunity to implement more targeted marketing and outreach strategies in underperforming regions to expand the customer base.</li>
+      <li>The trend analysis indicates a steady increase in order volume between 2013 and 2015, reflecting positive business growth. This momentum could be leveraged to scale operations, enhance logistics, and strengthen supplier relationships.</li>
+      <h4>Employees Performance</h4>
+      <img src="Employees Performance.png"style="width:100%; border-radius:10px; margin-top:10px;">
+      <li>The Area Chart reveals that United Package handles the majority of order deliveries, significantly outperforming the other two shipping companies. This indicates strong logistical reliability and a potential preference among customers.</li>
+      <li>The Employee Performance analysis highlights that Margaret, Janet, and Nancy are the most active in terms of customer engagement and order volume. These employees are contributing significantly to overall sales, suggesting strong client relationship skills and operational efficiency.</li>
+      <li>In contrast, Michael, Anna, and Steven appear to have lower interaction levels and fewer processed orders, indicating potential underperformance or areas that may benefit from additional training or support.</li>
+      <li>Revenue breakdown by employee further supports this trend — Margaret, Janet, and Nancy generate the highest total revenue, whereas Steven and Michael rank at the bottom. This data can be used to recognize top performers and realign responsibilities or incentives accordingly</li>
+      <h2>Key Insights</h2>
+      <div class="outcomes">
+          <li>Top Customers such as Save-a-Lot Markets, Ernst Handel, and Quick-Stop contribute significantly to total order volume, indicating high customer loyalty and strong recurring business.</li>
+          <li>USA and Germany are the most active markets, while countries like Sweden, Ireland, and Canada show minimal order activity</li>
+          <li>Beverages, Dairy Products, and Meat/Poultry are the top revenue-generating categories.</li>
+          <li>Grains/Cereals underperform in comparison, contributing the least to total sales.</li>
+          <li>United Package is the dominant shipping company in terms of order volume, suggesting operational efficiency and customer preference.</li>
+          <li>The performance gap between shipping companies highlights a need to evaluate service speed, delivery satisfaction, or coverage of underutilized carriers.</li>
+          <li>Margaret, Janet, and Nancy lead in both customer engagement and revenue generation, showcasing their impact on business growth.</li>
+          <li>Michael, Anna, and Steven show lower activity and revenue, indicating potential underperformance.</li>  
+          <li>There is a steady increase in order volume from 2013 to 2015, reflecting positive business growth and increasing customer demand.</li>
+          </div>
+       <h2>Suggestions</h2> 
+       <div class="outcomes">
+       <h3><li>Strengthen High-Performing Relationships</h3></li>
+       <p>Continue nurturing key customers through loyalty programs or personalized offerings, especially top buyers like Save-a-Lot Markets and Ernst Handel.</p>
+       <h3><li>Re-engage Underperforming Regions</h3></li>
+       <p>Implement targeted marketing campaigns and regional promotions in countries like Ireland, Sweden, and Canada to grow the customer base.</p>
+       <h3><li>Optimize Product Mix</h3></li>
+       <p>Explore reasons behind low performance of Grains/Cereals and evaluate whether to improve, rebrand, or phase out underperforming SKUs.</p>
+       <h3><li>Leverage Top Employees</h3></li>
+       <p>Recognize and reward high-performing staff like Margaret, Janet, and Nancy. Encourage knowledge-sharing or mentoring for lower-performing employees to improve overall team efficiency.</p>
+       <h3><li>Evaluate Shipping Partnerships</h3></li>
+       <p>Review logistics performance of underutilized shippers. If feasible, renegotiate contracts or streamline shipping options to favor the most efficient carriers.</p>
+       <h3><li>Scale with Demand Trends</h3></li>
+       <p>Given the steady growth from 2013 to 2015, invest in scaling inventory, staffing, and supplier coordination to meet rising demand without compromising quality.</p>
+    </div>
+      </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
