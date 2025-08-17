@@ -7,6 +7,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
@@ -32,7 +33,6 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#certs">Certifications</a>
-      <a href="#experience">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -75,8 +75,8 @@
             <span class="stat-value">85%</span>
           </div>
           <div class="stat">
-            <span class="stat-label">Viz Craft</span>
-            <span class="stat-value">88%</span>
+            <span class="stat-label">Insights power level</span>
+            <span class="stat-value">91%</span>
           </div>
         </div>
       </div>
@@ -95,21 +95,29 @@
     <div class="skills-grid">
       <!-- Circular meters (animated via GSAP) -->
       <div class="skill card glass">
-        <svg class="ring" viewBox="0 0 120 120" data-percent="90" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="93" aria-hidden="true">
           <circle class="bg" cx="60" cy="60" r="52" />
           <circle class="fg" cx="60" cy="60" r="52" />
         </svg>
         <div class="label">SQL</div>
-        <div class="desc">Joins, CTEs, Window Functions, Optimization</div>
+        <div class="desc"><li>Joins</li> <li>Cte</li><li1>Subqueries</li1><li>Window Functions</li> </div>
       </div>
-
       <div class="skill card glass">
         <svg class="ring" viewBox="0 0 120 120" data-percent="85" aria-hidden="true">
           <circle class="bg" cx="60" cy="60" r="52" />
           <circle class="fg" cx="60" cy="60" r="52" />
         </svg>
         <div class="label">Excel</div>
-        <div class="desc">Power Query, Pivot, Modeling, What-If</div>
+        <div class="desc"><li>Power Query</li><li>Pivot Tables</li><li>Data Validations</li></div>
+      </div>
+
+      <div class="skill card glass">
+        <svg class="ring" viewBox="0 0 120 120" data-percent="90" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" />
+          <circle class="fg" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="label">Power BI</div>
+        <div class="desc"><li>DAX Formulas</li><li>Data Modeling</li><li>UX for Insight</li></div>
       </div>
 
       <div class="skill card glass">
@@ -117,17 +125,8 @@
           <circle class="bg" cx="60" cy="60" r="52" />
           <circle class="fg" cx="60" cy="60" r="52" />
         </svg>
-        <div class="label">Power BI</div>
-        <div class="desc">DAX, Data Modeling, UX for Insight</div>
-      </div>
-
-      <div class="skill card glass">
-        <svg class="ring" viewBox="0 0 120 120" data-percent="78" aria-hidden="true">
-          <circle class="bg" cx="60" cy="60" r="52" />
-          <circle class="fg" cx="60" cy="60" r="52" />
-        </svg>
         <div class="label">Tableau</div>
-        <div class="desc">Storytelling, LODs, Actions</div>
+        <div class="desc"><li>Storytelling</li><li>LODs</li><li>Actions</li></div>
       </div>
 
       <div class="skill card glass">
@@ -136,7 +135,7 @@
           <circle class="fg" cx="60" cy="60" r="52" />
         </svg>
         <div class="label">Python</div>
-        <div class="desc">Pandas, EDA, Scikit-learn basics</div>
+        <div class="desc"><li>Pandas</li><li>Seaborn</li><li>Matplotlib</li><li> EDA</li><li>SQL Scikit</li></div>
       </div>
 
       <div class="skill card glass">
@@ -145,7 +144,7 @@
           <circle class="fg" cx="60" cy="60" r="52" />
         </svg>
         <div class="label">Cloud</div>
-        <div class="desc">BigQuery, Snowflake familiarity</div>
+        <div class="desc"><li>BigQuery</li><li>Snowflake</li></div>
       </div>
     </div>
   </section>
@@ -156,29 +155,29 @@
 
     <div class="project-grid">
       <article class="project card overlay">
-        <img src="https://images.unsplash.com/photo-1551281044-8d8d0d8b8a57?q=80&w=1200&auto=format&fit=crop" alt="Sales dashboard" />
+        <img src="Screenshot 2025-07-16 030122.png" alt="Sales dashboard" />
         <div class="overlay-content">
-          <h3>Sales Performance Dashboard</h3>
-          <p>Power BI + SQL: revenue trends, cohort & contribution analysis, drill-through UX.</p>
-          <a class="btn ghost small" href="#" target="_blank" rel="noopener">View Case Study</a>
+          <h3>Restraunt Rating Analysis</h3>
+          <p>Python + pandas for cleaning & EDA and Power Bi to visualize </p>
+          <a class="btn ghost small" href="project1.html" target="_blank" rel="noopener">View Case Study</a>
         </div>
       </article>
 
       <article class="project card overlay">
-        <img src="https://images.unsplash.com/photo-1534759846116-57968a6b17f8?q=80&w=1200&auto=format&fit=crop" alt="Churn analysis" />
+        <img src="Screenshot 2025-08-17 004317.png" />
         <div class="overlay-content">
-          <h3>Customer Churn Analytics</h3>
-          <p>Python + SQL: feature engineering, drivers, retention playbook with visuals.</p>
-          <a class="btn ghost small" href="#" target="_blank" rel="noopener">View Case Study</a>
+          <h3>Telecom Customer Churn Analysis</h3>
+          <p>SQL for cleaning + Python Matplolib, Seaborn for EDA and Tableau for visalisation</p>
+          <a class="btn ghost small" href="project2.html" target="_blank" rel="noopener">View Case Study</a>
         </div>
       </article>
 
       <article class="project card overlay">
-        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=1200&auto=format&fit=crop" alt="Forecasting" />
+        <img src="gourmet sales.png" alt="Forecasting" />
         <div class="overlay-content">
-          <h3>Time‑Series Forecasting</h3>
-          <p>ARIMA baseline + error analysis; practical accuracy for planning.</p>
-          <a class="btn ghost small" href="#" target="_blank" rel="noopener">View Case Study</a>
+          <h3>Gourmet Food Supplier Sales Analysis</h3>
+          <p>SQL for Data cleaning and EDA , Power Bi to Visualize</p>
+          <a class="btn ghost small" href="project3.html" target="_blank" rel="noopener">View Case Study</a>
         </div>
       </article>
     </div>
@@ -189,18 +188,18 @@
     <h2>Certifications</h2>
     <div class="track">
       <div class="cert card glass">
-        <div class="cert-badge">Google</div>
-        <h4>Data Analytics Professional</h4>
+        <div class="cert-badge">TATA</div>
+        <h4>Data Visualization</h4>
         <span class="meta">2025</span>
       </div>
       <div class="cert card glass">
-        <div class="cert-badge">Microsoft</div>
-        <h4>Power BI Certification</h4>
+        <div class="cert-badge">DELOITTE</div>
+        <h4>Data Analyst</h4>
         <span class="meta">2025</span>
       </div>
       <div class="cert card glass">
-        <div class="cert-badge">Snowflake</div>
-        <h4>Snowflake Fundamentals</h4>
+        <div class="cert-badge">Geeksters</div>
+        <h4>Advanced SQL</h4>
         <span class="meta">2025</span>
       </div>
       <div class="cert card glass">
@@ -211,71 +210,40 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE / JOURNEY -->
-  <section id="experience" class="section journey">
-    <h2>Journey</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="dot"></div>
-        <div class="content glass">
-          <h4>2025 — Analytics Projects</h4>
-          <p>Shipped 3 end-to-end projects across churn, sales forecasting, and dashboards.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="dot"></div>
-        <div class="content glass">
-          <h4>2024 — Foundations</h4>
-          <p>Deep dive in SQL, Excel, Tableau/Power BI. Started writing data stories.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="dot"></div>
-        <div class="content glass">
-          <h4>Ongoing — Always Learning</h4>
-          <p>Experimenting with forecasting, feature engineering, and better narratives.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!-- CONTACT -->
+<!-- CONTACT -->
 <section id="contact" class="section contact">
   <h2>Contact</h2>
-  <form id="contactForm" class="card glass form">
+  <form id="contactForm" class="card glass form" action="https://formspree.io/f/xvgqyqqy" method="POST">
     <div class="field">
-      <label>Name</label>
-      <input type="text" name="name" required />
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" required />
     </div>
     <div class="field">
-      <label>Email</label>
-      <input type="email" name="email" required />
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required />
     </div>
     <div class="field">
-      <label>Message</label>
-      <textarea name="message" rows="4" required></textarea>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
     </div>
+
+    <!-- Hidden input to allow JSON response -->
+    <input type="hidden" name="_replyto">
+
     <button class="btn primary" type="submit">Send Message</button>
   </form>
   <p id="formMessage" style="display:none; color: lime;"></p>
 </section>
 
-
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="foot-inner">
-      <div class="left">Built with 💡 & SQL</div>
-      <div class="right">
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="GitHub">GitHub</a>
-        <a href="#" aria-label="Kaggle">Kaggle</a>
-        <a href="mailto:khajadanishuddin@gmail.com" aria-label="Email">Email</a>
-      </div>
-    </div>
-  </footer>
+  <div class="foot-inner">
+    <div class="center-links">
+      <a href="https://github.com/Danish-ud" aria-label="GitHub">GitHub</a>
+      <a href="mailto:khajadanishuddin@gmail.com" aria-label="Email">Email</a>
+</footer>
 </body>
 </html>
 
-</html>
 
 
